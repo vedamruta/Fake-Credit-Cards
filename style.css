@@ -1,0 +1,195 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-size: 20px; */
+    font-family: 'Space Grotesk', sans-serif;
+    background-image: url('images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+#card_pics {
+    /* height: 30vh; */
+}
+
+.cards {
+    width: 20%;
+    height: 30vh;
+    /* margin: 6em auto 0 auto; */
+    background-color: rgba(250, 235, 215, 0);
+    /* padding: 0px auto; */
+    /* height: 200px; */
+    overflow: visible;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+} 
+
+.back, .front {
+    width: 1000px;
+    /* height: 50px; */
+    min-width: 200px;
+    overflow: visible;
+    /* margin: 0 auto; */
+}
+
+.back {
+    /* position: absolute;
+    right: 20%;
+    margin-top: 1em; */
+  position: relative;
+  /* top: 17%; */
+  left: 50%;
+}
+
+.front {
+  position: absolute;
+  top: 45%;
+  /* left: 33%; */
+  /* left: auto; */
+  z-index: 10;
+  color: white;
+  letter-spacing: 4px;
+    /* position: relative;
+    right: 95%;
+    top: 48%;
+    z-index: 10; */
+}
+
+.back img, .front img {
+    width: 100%;
+    /* max-width: 900px; */
+}
+
+#card_details {
+    width: 100%;
+    height: 65vh;
+    /* background-color: thistle; */
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+}
+.container {
+    width: 80%;
+    margin: 4em auto 0 auto; 
+    font-size: 3rem;
+    padding-top: 2em;
+  }
+  .lastrow {
+    display: flex;
+    gap: 2em;
+  }
+  .data_actual {
+    display: flex;
+  }
+  input[type="text"], input[type="number"] {
+    /* width: 100%; */
+    padding: 1em;
+  }
+
+input {
+    margin-top: 0.5em;
+    /* margin-top: 1.2em; */
+    border: 2px solid lightgrey;
+    border-radius: 10px;
+}
+
+/* ::placeholder {
+  color: lightgrey;
+} */
+
+#confirm {
+    background-color: hsl(278, 68%, 11%);
+    font-size: 3rem;
+    padding: 0.8em 5.5em;
+    margin-top: 1.2em;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+input, input::placeholder {
+  font-size: 2rem;
+}
+
+.confirm {
+  margin-top: 1em;
+}
+
+.card_values {
+  position: absolute;
+  top: 3em;
+  left: 2em;
+  z-index: 5;
+}
+
+.num_container {
+  padding-top: 2em;
+  padding-left: 0.5em;
+  font-size: 3.5rem;
+}
+
+.name_num {
+  padding-top: 0.5em;
+  display: flex;
+  gap: 2em;
+}
+
+.logo-div {
+  min-width: 100px;
+  max-width: 250px;
+}
+
+.card-logo {
+  width: 100%;
+}
+
+#mm, #yy {
+  width: 150px;
+  padding: 1em 0.5em;
+}
+
+#back_cvc {
+  font-size: 3rem;
+  background-color: white;
+  /* z-index: 11; */
+  position: absolute;
+  width: 10%;
+  top: 42.5%;
+  right: 11%;
+}
+
+i.fa-solid {
+  color: tomato;
+  visibility: hidden;
+}
+
+small {
+  color: tomato;
+  /* margin-bottom: 1.2em; */
+  visibility: hidden;
+}
+
+  /* .cvc {
+    display: flex;
+  } */
+  /* ### Primary
+
+- Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
+- Red (input errors): hsl(0, 100%, 66%)
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Light grayish violet: hsl(270, 3%, 87%)
+- Dark grayish violet: hsl(279, 6%, 55%)
+- Very dark violet: hsl(278, 68%, 11%) */
