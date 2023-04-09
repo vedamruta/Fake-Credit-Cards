@@ -72,53 +72,53 @@ cardholder_name.addEventListener('change', inputHandler('cardname'));
 console.log(nameHandler());
 
 
-// function numberHandler() {
-//     const cno_i = document.getElementById('cno_i');
-//     const numnum = document.getElementById('numnum');
-//     let cardnumregex = /\d{4} \d{4} \d{4} \d{4}$/;
-//     if(cardnumregex.test(number.value) == false) {
-//         // confirm_btn.disabled = false;
-//         cno_i.style.visibility = 'visible';
+function numberHandler() {
+    const cno_i = document.getElementById('cno_i');
+    const numnum = document.getElementById('numnum');
+    let cardnumregex = /\d{4} \d{4} \d{4} \d{4}$/;
+    if(cardnumregex.test(number.value) == false) {
+        // confirm_btn.disabled = false;
+        cno_i.style.visibility = 'visible';
 
-//     }
-//     else {
-//         // confirm_btn.disabled = true;
-//         // confirm_btn.style.backgroundColor = 'thistle';
-//         numnum.visibility = 'hidden';
-//         cno_i.style.visibility = 'hidden';
-//     }
-// }
+    }
+    else {
+        // confirm_btn.disabled = true;
+        // confirm_btn.style.backgroundColor = 'thistle';
+        numnum.visibility = 'hidden';
+        cno_i.style.visibility = 'hidden';
+    }
+}
 
-// function dateHandler(mm, yy) {
-//     const cdate_i = document.getElementById('cdate_i');
-//     const datesmall = document.getElementById('datesmall');
-//     let mmyyregex = /\d{2}$/;
+function dateHandler(mm, yy) {
+    const cdate_i = document.getElementById('cdate_i');
+    const datesmall = document.getElementById('datesmall');
+    let mmyyregex = /\d{2}$/;
 
-//     if(mmyyregex.test(mm.value) && mmyyregex.test(yy.value)) {
-//         if(mm.value<=12) {
-//             cdate_i.style.visibility = 'hidden';
-//             datesmall.style.visibility = 'hidden';
-//         }
-//     }
-//     else {
-//         cdate_i.style.visibility = 'visible';
-//             datesmall.style.visibility = 'visible';
-//     }
-// }
+    if(mmyyregex.test(mm.value) && mmyyregex.test(yy.value)) {
+        if(mm.value<=12) {
+            cdate_i.style.visibility = 'hidden';
+            datesmall.style.visibility = 'hidden';
+        }
+    }
+    else {
+        cdate_i.style.visibility = 'visible';
+            datesmall.style.visibility = 'visible';
+    }
+}
 
-// function cvcHandler() {
-//     const cvc_i = document.getElementById('cvc_i');
-//     const cvcsmall = document.getElementById('cvcsmall');
-//     let cvcregex = /\d{3}$/; 
-//     if(cvcregex.test(cvc.value)) {
-//         cvc_i.style.visibility = 'hidden';
-//         cvcsmall.style.visibility = 'hidden';
-//     }
-//     else {
-//         cvc_i.style.visibility = 'visible';
-//         cvcsmall.style.visibility = 'visible';
-//     }
-// }
+function cvcHandler() {
+    const cvc_i = document.getElementById('cvc_i');
+    const cvcsmall = document.getElementById('cvcsmall');
+    let cvcregex = /\d{3}$/; 
+    if(cvcregex.test(cvc.value)) {
+        cvc_i.style.visibility = 'hidden';
+        cvcsmall.style.visibility = 'hidden';
+    }
+    else {
+        cvc_i.style.visibility = 'visible';
+        cvcsmall.style.visibility = 'visible';
+    }
+}
 
 
 // let typingTimer;

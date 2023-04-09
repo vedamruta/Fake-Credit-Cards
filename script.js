@@ -34,6 +34,8 @@ const back_cvc = document.getElementById('back_cvc');
 
 const cname_i = document.getElementById('cno_i');
 const namesmall = document.getElementById('namesmall');
+const cno_i = document.getElementById('cno_i');
+const numnum = document.getElementById('numnum');
 
 function inputHandler(field) {
     switch(field) {
@@ -44,7 +46,7 @@ function inputHandler(field) {
             numberHandler();
             break;
         case "date": 
-            dateHandler();
+            dateHandler(mm, yy);
             break;
         case "cvc": 
             cvcHandler();
@@ -53,11 +55,9 @@ function inputHandler(field) {
 }
 
 function nameHandler() {
-    // const cname_i = document.getElementById('cno_i');
-    // const namesmall = document.getElementById('namesmall');
     let regex = /^[a-zA-Z ]*$/;
     console.log(regex.test(cardholder_name.value));
-    if(regex.test(cardholder_name.innerHTML)==false || cardholder_name.value == "") {
+    if(regex.test(cardholder_name.value)==false || cardholder_name.value == "") {
         cname_i.style.visibility = 'visible';
         namesmall.style.visibility = 'visible';
     }
@@ -65,11 +65,84 @@ function nameHandler() {
         cname_i.style.visibility = 'hidden';
         namesmall.style.visibility = 'hidden';
     }
-    console.log(cardholder_name.innerHTML);
+    console.log(cardholder_name.value);
 }
 
-cardholder_name.addEventListener('change', inputHandler('cardname'));
-console.log(nameHandler());
+function numberHandler() {
+    let cardnumregex = /\d{4} \d{4} \d{4} \d{4}$/;
+    if(cardnumregex.test(number.value) == false) {
+        // confirm_btn.disabled = false;
+        cno_i.style.visibility = 'visible';
+        numnum.visibility = 'visible';
+    }
+    else {
+        // confirm_btn.disabled = true;
+        // confirm_btn.style.backgroundColor = 'thistle';
+        numnum.visibility = 'hidden';
+        cno_i.style.visibility = 'hidden';
+    }
+    console.log(cardnumregex.test(number.value));
+    console.log(number.value);
+}
+
+function dateHandler(mm, yy) {
+    const cdate_i = document.getElementById('cdate_i');
+    const datesmall = document.getElementById('datesmall');
+    let mmyyregex = /\d{2}$/;
+
+    console.log(mm.value);
+    console.log(yy.value);
+
+    if(mmyyregex.test(mm.value) && mmyyregex.test(yy.value)) {
+        if(mm.value<=12 && yy.value>=2023) {
+            cdate_i.style.visibility = 'hidden';
+            datesmall.style.visibility = 'hidden';
+        }
+    }
+    else {
+        cdate_i.style.visibility = 'visible';
+        datesmall.style.visibility = 'visible';
+    }
+    console.log(mmyyregex.test(mm.value));
+    console.log(mmyyregex.test(yy.value));
+}
+
+function cvcHandler() {
+    const cvc_i = document.getElementById('cvc_i');
+    const cvcsmall = document.getElementById('cvcsmall');
+
+    // hya regex madhe error ahe '0000' enter kelyavar pan accept hotay whereas fakt 3 digit number ch accept hoyla pahije
+    let cvcregex = /\d{3}$/; 
+    if(cvcregex.test(cvc.value)) {
+        cvc_i.style.visibility = 'hidden';
+        cvcsmall.style.visibility = 'hidden';
+    }
+    else {
+        cvc_i.style.visibility = 'visible';
+        cvcsmall.style.visibility = 'visible';
+    }
+}
+
+// cardholder_name.addEventListener('change', inputHandler('cardname'));
+// console.log(nameHandler());
+
+
+
+// cardholder_name.addEventListener('input', () => {
+//     // Set a delay of 500 milliseconds before calling inputHandler()
+//     setTimeout(() => inputHandler('cardname'), 3000);
+// });
+
+cardholder_name.addEventListener('change', () => inputHandler('cardname'));
+
+number.addEventListener('change', () => inputHandler('cardnumber'));
+
+mm.addEventListener('change', () => inputHandler('date'));
+
+yy.addEventListener('change', () => inputHandler('date'));
+
+cvc.addEventListener('change', () => inputHandler('cvc'));
+
 
 
 

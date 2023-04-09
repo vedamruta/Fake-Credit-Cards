@@ -20,7 +20,7 @@
 </head>
 <body>
   <main>
-    <section id="card_pics">
+    <div id="card_pics">
       <div class="cards">
         <div class="front">
           <img src="images/bg-card-front.png" alt="">
@@ -39,9 +39,9 @@
         <p id="back_cvc">000</p>
         </div>
       </div>
-  </section>
+    </div>
 
-    <section id="card_details">
+    <div id="card_details">
       <div class="container">
         <p class="cardholder">CARDHOLDER NAME <i class="fa-solid fa-circle-exclamation" id="cname_i"></i></p>
         <input type="text" name="cardholdername" id="name" placeholder="e.g. Jane Appleseed">
@@ -67,10 +67,10 @@
         <small id="datesmall">Date should be in MM YY format</small>
         &nbsp;<small id="cvcsmall">CVC should be a 3 digit number.</small>
         <br>
-        <!-- <a href="#" id="confirm">Confirm</a> -->
-        <button id="confirm">Confirm</button>
+        <a href="#" id="confirm">Confirm</a>
+        <!-- <button id="confirm">Confirm</button> -->
       </div>
-    </section>
+    </div>
 </main>
   <script src="script.js"></script>
 </body>
